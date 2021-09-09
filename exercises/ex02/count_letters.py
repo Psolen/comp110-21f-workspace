@@ -1,6 +1,22 @@
 """Counting letters in a string."""
 
-__author__ = "ENTER YOUR 9-DIGIT PID HERE"
+__author__ = "730247598"
 
+# Input.
 
-# Begin your solution here...
+search_letter: str = input("What letter do you want to search for?: ")
+word_search: str = input("Enter a word: ")
+count: int = 0
+i = 0
+
+# Output
+
+while i < len(word_search):
+
+    if word_search[i] == search_letter:
+        count = count + 1
+        i = i + 1
+    else:
+        i = i + 1
+
+print("Count: " + str(count)) 
