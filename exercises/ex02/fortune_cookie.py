@@ -12,7 +12,7 @@ fortune_four: str = ("Fortune favors the brave.")
 
 # Output.
 
-r1: int = randint(0,4)
+r1: int = randint(0, 4)
 
 if r1 == 1:
     print("Your fortune cookie says... ")
