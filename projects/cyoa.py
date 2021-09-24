@@ -12,25 +12,23 @@ OKRA_SORT_OF: str = "\U0001F966"
 APPLE: str = "\U0001F34E"
 
 
-def greet(player):
-    # This is a function to greet the player and initialize the adventure.
+def greet() -> None:
+    """This is a function to greet the player and initialize the adventure."""
+    global player
     player = input("Enter your name, player! \n")
     print("")
     print(f"Welcome {player}!")
-    return player
-
+    
  
-def hero_mentor(mentor_num):
+def hero_mentor(mentor_num) -> int:
+    """This procedure allows the player to pick an unknown hero mentor for bonus points to their quiz score."""
     mentor_num = int(input("Enter a Number between 1 and 3 to select your mentor. "))
-    print("Hero Score: ", hero_score)
 
     if mentor_num == 1:
-        print("Hero Score: ", hero_score)
         print(f"Congratulations {player}! Your hero mentor is 'Endeavor', the Flame Hero")
         print("With the explosive power from his quirk 'Hellflame', Endeavor has forced his way into the number 2 hero spot in the world! He will be a great mentor.")
         mentor_num = 0
         mentor_num += 5
-        print("Hero Score: ", hero_score)
         return mentor_num
     elif mentor_num == 2:
         print(f"Congratulations {player}! Your hero mentor is 'Snipe', the Homing Hero")
@@ -46,10 +44,11 @@ def hero_mentor(mentor_num):
         return mentor_num
     else:
         print("Invalid Input, Try Again.")
+        return mentor_num
 
 
 def question_one(answer_choice, points, hero_score, player):
-    # The first question of the quiz.  
+    """This is the first question of the quiz."""
 
     points = 0
 
@@ -85,7 +84,7 @@ def question_one(answer_choice, points, hero_score, player):
 
 
 def question_two(answer_choice, points, hero_score, player):
-    # The second question of the quiz.
+    """This is the second question of the quiz."""
     print("\nCongratulations! Due to your bravery, you have been accepted into UA! After meeting all of your teachers, who is your role model hero?")
 
     print("\n1) 'Thirteen' the Rescue Training Specialist. This astronaught suit wearing hero can create blackholes out of her finger tips.")
@@ -115,7 +114,7 @@ def question_two(answer_choice, points, hero_score, player):
 
     
 def question_three(answer_choice, points, hero_score, player):
-    # The third question of the quiz.
+    """This is the third question of the quiz."""
     print("\nLast Question: What food do you like the most?")
 
     print("\n1) Oranges. ", ORANGES)
@@ -141,7 +140,7 @@ def question_three(answer_choice, points, hero_score, player):
 
 
 def results(answer_choice, points, hero_score, player):
-    # This function gives the players their results.
+    """This function gives the player their results."""
     courage: int = randint(1, 10)
     points += courage
     print("Hero Score: ", hero_score)
@@ -166,7 +165,7 @@ def results(answer_choice, points, hero_score, player):
 
 
 def villian_path():
-    # End the game, player is a villian.
+    """End the adventure, the player is a villian."""
     print("You are no hero! Evil will never previal!")
     print(f"Your hero score is { points }, your status is 'Villian'.")
     hero_score == 0
@@ -174,6 +173,7 @@ def villian_path():
 
 
 def main() -> None:
+    """This is the main function."""
     global points
     global hero_score
     global answer_choice
@@ -184,7 +184,7 @@ def main() -> None:
     answer_choice = 0
     game_loop: int = 0
 
-    player = greet(player)
+    greet()
 
     print("Enter '1' to take a quiz to find out which My Hero Academia character you are most like!")
     print("or")
@@ -232,10 +232,8 @@ def main() -> None:
         print("End")
 
     elif procedure_or_function == 2:
-        print("Hero Score: ", hero_score)
 
         hero_score += hero_mentor(mentor_num)
-        print("Hero Score: ", hero_score)
 
         print("Would you like to take the Hero Quiz now?")
         print("1) Yes.")
@@ -281,4 +279,5 @@ def main() -> None:
 
     
 if __name__ == "__main__":
+    """This is where the main function is called."""
     main()
