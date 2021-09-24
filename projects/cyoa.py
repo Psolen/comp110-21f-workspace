@@ -20,7 +20,7 @@ def greet() -> None:
     print(f"Welcome {player}!")
     
  
-def hero_mentor(mentor_num) -> int:
+def hero_mentor(mentor_num: int) -> int:
     """This procedure allows the player to pick an unknown hero mentor for bonus points to their quiz score."""
     mentor_num = int(input("Enter a Number between 1 and 3 to select your mentor. "))
 
@@ -47,9 +47,8 @@ def hero_mentor(mentor_num) -> int:
         return mentor_num
 
 
-def question_one(answer_choice, points, hero_score, player):
+def question_one(answer_choice: int, points: int, hero_score: int, player: str):
     """This is the first question of the quiz."""
-
     points = 0
 
     print("Scenario: It's your hero school entrance exam.")
@@ -83,7 +82,7 @@ def question_one(answer_choice, points, hero_score, player):
         print("Improper value entered. Play again.")
 
 
-def question_two(answer_choice, points, hero_score, player):
+def question_two(answer_choice: int, points: int, hero_score: int, player: str):
     """This is the second question of the quiz."""
     print("\nCongratulations! Due to your bravery, you have been accepted into UA! After meeting all of your teachers, who is your role model hero?")
 
@@ -113,7 +112,7 @@ def question_two(answer_choice, points, hero_score, player):
         print("Improper value entered. Play again.")
 
     
-def question_three(answer_choice, points, hero_score, player):
+def question_three(answer_choice: int, points: int, hero_score: int, player: str):
     """This is the third question of the quiz."""
     print("\nLast Question: What food do you like the most?")
 
@@ -139,7 +138,7 @@ def question_three(answer_choice, points, hero_score, player):
         print("Improper value entered. Play again.")
 
 
-def results(answer_choice, points, hero_score, player):
+def results(answer_choice: int, points: int, hero_score: int, player: str):
     """This function gives the player their results."""
     courage: int = randint(1, 10)
     points += courage
@@ -164,7 +163,7 @@ def results(answer_choice, points, hero_score, player):
         print("The name says it all, Pinky is instrumental on the battlefield. Her acid allows her to take out foes and melt through any obstacles in her teams way!")
 
 
-def villian_path():
+def villian_path() -> None:
     """End the adventure, the player is a villian."""
     print("You are no hero! Evil will never previal!")
     print(f"Your hero score is { points }, your status is 'Villian'.")
