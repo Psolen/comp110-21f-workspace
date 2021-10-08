@@ -6,7 +6,7 @@ __author__ = "730247598"
 
 
 def only_evens(int_list: list[int]) -> list[int]:
-    # This a function to find and return even integers in a list of ints.
+    """This a function to find and return even integers in a list of ints."""
     even_list: list[int] = []
     i: int = 0
     while i < len(int_list):
@@ -17,7 +17,7 @@ def only_evens(int_list: list[int]) -> list[int]:
 
 
 def sub(a_list: list[int], start_i, end_i) -> list[int]:
-    # This function returns the values between two inputed ints.
+    """This function returns the values between two inputed ints."""
     b_list: list[int] = []
     i: int = 0
     if start_i < 0:
@@ -32,8 +32,9 @@ def sub(a_list: list[int], start_i, end_i) -> list[int]:
         i += 1
     return b_list
 
+
 def concat(list_one: list[int], list_two: list[int]) -> list[int]:
-    # This function concatinates two lists together.
+    """This function concatinates two lists together."""
     list_three: list[int] = []
     i: int = 0
     while i < len(list_one):
