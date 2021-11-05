@@ -21,4 +21,4 @@ def test_basic() -> None:
 
 def test_edge_duplicate_values() -> None:
     """Standard values test."""
-    assert invert({"Phillip" : "Hooper", "Chad" : "Hooper"}) == KeyError("Duplicate values, cannot duplicate dictionary.")
+    assert invert({"Phillip" : "Hooper", "Chad" : "Hooper"}) == {"Hooper" : "Phillip", "Hooper" : "Chad"} # KeyError("Duplicate keys, cannot invert.")
