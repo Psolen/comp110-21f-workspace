@@ -6,11 +6,10 @@ from csv import DictReader
 
 # Define your functions below
 DATA_DIRECTORY = "../../data"
-DATA_FILE_PATH = f"{DATA_DIRECTORY}/nc_durham_2015_march_21_to_26.cs"
+DATA_FILE_PATH = f"{DATA_DIRECTORY}/survey.csv"
 
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
-
     """Read the rows of a csv file."""
     result: list[dict[str, str]] = []
     
