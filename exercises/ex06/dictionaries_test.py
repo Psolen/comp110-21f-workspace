@@ -16,9 +16,8 @@ def test_empty() -> None:
 
 def test_basic() -> None:
     """Standard values test."""
-    assert invert({"UNC" : "Duke"}) == {"Duke" : "UNC"}
+    assert invert({"UNC": "Duke"}) == {"Duke": "UNC"}
 
 
 def test_edge_duplicate_values() -> None:
-    """Standard values test."""
-    assert invert({"Phillip" : "Hooper", "Chad" : "Hooper"}) == {"Hooper" : "Phillip", "Hooper" : "Chad"} # KeyError("Duplicate keys, cannot invert.")
+   """Double Key Test"""
