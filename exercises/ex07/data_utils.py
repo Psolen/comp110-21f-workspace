@@ -6,7 +6,7 @@ from csv import DictReader
 
 # Define your functions below
 DATA_DIRECTORY = "../../data"
-DATA_FILE_PATH = f"{DATA_DIRECTORY}/nc_durham_2015_march_21_to_26.cs"
+DATA_FILE_PATH = f"{DATA_DIRECTORY}/nc_durham_2015_march_21_to_26.csv"
 
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
@@ -48,4 +48,16 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     for column in first_row:
         result[column] = column_values(row_table, column)
         
+    return result
+
+
+def head(data_col_main: dict[str, list[str]], N: int) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    for row_one in data_col_main:
+        emp_list: list[str] = []
+        i: int = 0
+        while i < N:
+            emp_list.append(row_one)
+            i += 1
+        result[row_one] = emp_list
     return result

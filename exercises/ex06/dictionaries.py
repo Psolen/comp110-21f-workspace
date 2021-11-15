@@ -25,7 +25,6 @@ def favorite_colors(color_list: dict[str, str]) -> str:
     max: int = 0
 
 
-    
     for keys in color_list:
         is_color_present: bool = color_list[keys] in color_count
 
