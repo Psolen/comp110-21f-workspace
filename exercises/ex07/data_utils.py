@@ -57,7 +57,22 @@ def head(data_col_main: dict[str, list[str]], N: int) -> dict[str, list[str]]:
         emp_list: list[str] = []
         i: int = 0
         while i < N:
-            emp_list.append(row_one)
+            emp_list.append(data_col_main[row_one][i])
             i += 1
         result[row_one] = emp_list
+    return result
+
+
+def select(base_data: dict[str, list[str]], chosen_columns: list[str]) -> dict[str, list[str]]:
+    results: dict[str, list[str]] = {}
+
+    for i in chosen_columns:
+        results[i] = base_data[i]
+
+    return results
+
+
+def concat(column_one: dict[str, list[str]], column_two: dict[str, list[str]]) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+
     return result
