@@ -48,3 +48,13 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
         result[column] = column_values(row_table, column)
         
     return result
+
+
+def select(base_data: dict[str, list[str]], chosen_columns: list[str]) -> dict[str, list[str]]:
+    """Return the rows of only a few select columns in a table."""
+    results: dict[str, list[str]] = {}
+
+    for i in chosen_columns:
+        results[i] = base_data[i]
+
+    return results
