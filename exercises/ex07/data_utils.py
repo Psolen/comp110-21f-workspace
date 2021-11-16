@@ -10,7 +10,6 @@ DATA_FILE_PATH = f"{DATA_DIRECTORY}/nc_durham_2015_march_21_to_26.csv"
 
 
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
-
     """Read the rows of a csv file."""
     result: list[dict[str, str]] = []
     
@@ -52,7 +51,11 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 
 def head(data_col_main: dict[str, list[str]], N: int) -> dict[str, list[str]]:
+    """Return a certain number of rows in every given column in a chart."""
     result: dict[str, list[str]] = {}
+    if N > len(data_col_main):
+        N = len(data_col_main)
+
     for row_one in data_col_main:
         emp_list: list[str] = []
         i: int = 0
@@ -64,6 +67,7 @@ def head(data_col_main: dict[str, list[str]], N: int) -> dict[str, list[str]]:
 
 
 def select(base_data: dict[str, list[str]], chosen_columns: list[str]) -> dict[str, list[str]]:
+    """Return the rows of only a few select columns in a table."""
     results: dict[str, list[str]] = {}
 
     for i in chosen_columns:
@@ -73,6 +77,7 @@ def select(base_data: dict[str, list[str]], chosen_columns: list[str]) -> dict[s
 
 
 def concat(column_one: dict[str, list[str]], column_two: dict[str, list[str]]) -> dict[str, list[str]]:
+    """Combine two columns into one from a table."""
     result: dict[str, list[str]] = {}
     for i in column_one:
         result[i] = column_one[i]
@@ -86,6 +91,7 @@ def concat(column_one: dict[str, list[str]], column_two: dict[str, list[str]]) -
 
 
 def count(list_val: list[str]) -> dict[str, int]:
+    """Create a dictionary from a list of values that counts the number of times a value is repeated."""
     result: dict[str, int] = {}
     
     for i in list_val:
@@ -93,5 +99,5 @@ def count(list_val: list[str]) -> dict[str, int]:
             result[i] += 1
         else:
             result[i] = 1
-            
+
     return result
