@@ -74,5 +74,24 @@ def select(base_data: dict[str, list[str]], chosen_columns: list[str]) -> dict[s
 
 def concat(column_one: dict[str, list[str]], column_two: dict[str, list[str]]) -> dict[str, list[str]]:
     result: dict[str, list[str]] = {}
+    for i in column_one:
+        result[i] = column_one[i]
+    for j in column_two:
+        if j in result:
+            result[j] += column_two[j]
+        else:
+            result[j] = column_two[j]
 
+    return result
+
+
+def count(list_val: list[str]) -> dict[str, int]:
+    result: dict[str, int] = {}
+    
+    for i in list_val:
+        if i in result:
+            result[i] += 1
+        else:
+            result[i] = 1
+            
     return result
