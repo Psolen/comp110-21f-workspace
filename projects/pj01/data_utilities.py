@@ -50,6 +50,22 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     return result
 
 
+def head(data_col_main: dict[str, list[str]], N: int) -> dict[str, list[str]]:
+    """Return a certain number of rows in every given column in a chart."""
+    result: dict[str, list[str]] = {}
+    if N > len(data_col_main):
+        N = len(data_col_main)
+
+    for row_one in data_col_main:
+        emp_list: list[str] = []
+        i: int = 0
+        while i < N:
+            emp_list.append(data_col_main[row_one][i])
+            i += 1
+        result[row_one] = emp_list
+    return result
+
+
 def select(base_data: dict[str, list[str]], chosen_columns: list[str]) -> dict[str, list[str]]:
     """Return the rows of only a few select columns in a table."""
     results: dict[str, list[str]] = {}
@@ -58,3 +74,13 @@ def select(base_data: dict[str, list[str]], chosen_columns: list[str]) -> dict[s
         results[i] = base_data[i]
 
     return results
+
+
+def column_values(table: list[dict[str, str]], column: str) -> list[str]:
+    """Produce a list of str of all values in a single column."""
+    result: list[str] = []
+    for row in table:
+        item: str = row[column]
+        result.append(item)
+
+    return result
